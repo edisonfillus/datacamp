@@ -20,7 +20,6 @@ print(next(superspeed))
 print(next(superspeed))
 print(next(superspeed))
 
-
 # Create an iterator for range(3): small_value
 small_value = iter(range(3))
 
@@ -33,9 +32,8 @@ print(next(small_value))
 for i in range(3):
     print(i)
 
-
 # Create an iterator for range(10 ** 100): googol
-googol = iter(range(10**100))
+googol = iter(range(10 ** 100))
 
 # Print the first 5 values from googol
 print(next(googol))
@@ -45,9 +43,18 @@ print(next(googol))
 print(next(googol))
 
 # Range doesn't create the list, just the iterator
+print(googol)
+
 for i in googol:
-    if i % 10000000 == 0:
+    if i % 10000 == 0:
         print(i)
-    if i == 100000000:
+    if i == 100000:
         break
+  
+# If you try to transform in List, you get and Overflow    
+# googol_list = list(googol)
+
+# Range accept parameter for start, stop and step
+for i in range(5, 50, 5):
+    print(i)
     
