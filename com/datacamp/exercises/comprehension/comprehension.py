@@ -2,6 +2,8 @@
 Created on 6 de abr de 2018
 
 @author: Edison Klafke Fillus
+
+OBS: Comprehension is eager, generate all values. For lazy generation, use generators
 '''
 
 # Get the first letter
