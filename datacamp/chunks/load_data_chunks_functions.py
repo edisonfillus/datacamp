@@ -27,7 +27,7 @@ def count_entries(csv_file, c_size, colname):
     return counts_dict
 
 # Call count_entries(): result_counts
-result_counts = count_entries('../../datasets/tweets.csv',100,'lang')
+result_counts = count_entries('../../data/tweets.csv',100,'lang')
 
 # Print result_counts
 print(result_counts)

@@ -16,16 +16,15 @@ squares = [i**2 for i in range(10)]
 print(squares)
 
 
-# Create a 5 x 5 matrix using a list of lists: matrix
-matrix = [[col for col in range(5)] for row in range(5)]
-
 '''
+Create a 5 x 5 matrix using a list of lists: matrix
 matrix = [[0, 1, 2, 3, 4],
           [0, 1, 2, 3, 4],
           [0, 1, 2, 3, 4],
           [0, 1, 2, 3, 4],
           [0, 1, 2, 3, 4]]
 '''
+matrix = [[col for col in range(5)] for row in range(5)]
 
 # Print the matrix
 for row in matrix:

@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Open a connection to the file
-with open('../../datasets/world_dev_ind.csv') as file:
+with open('../../data/world_dev_ind.csv') as file:
 
     # Skip the column names
     file.readline()
@@ -57,7 +57,7 @@ def read_large_file(file_object):
         yield data
 
 
-with open('../../datasets/world_dev_ind.csv') as file:
+with open('../../data/world_dev_ind.csv') as file:
 
     # Create a generator object for the file: gen_file
     gen_file = read_large_file(file)
@@ -69,7 +69,7 @@ with open('../../datasets/world_dev_ind.csv') as file:
 
         
 # Open a connection to the file
-with open('../../datasets/world_dev_ind.csv') as file:
+with open('../../data/world_dev_ind.csv') as file:
     # Iterate over the generator from read_large_file()
     for line in read_large_file(file):
 
@@ -87,7 +87,7 @@ print(counts_dict)
 
 
 # Initialize reader object: urb_pop_reader
-urb_pop_reader = pd.read_csv('../../datasets/ind_pop.csv', chunksize=1000)
+urb_pop_reader = pd.read_csv('../../data/ind_pop.csv', chunksize=1000)
 
 # Initialize empty DataFrame: data
 data = pd.DataFrame()
