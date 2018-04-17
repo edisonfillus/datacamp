@@ -84,8 +84,6 @@ with open('../../data/world_dev_ind.csv') as file:
 # Print            
 print(counts_dict)
 
-
-
 # Initialize reader object: urb_pop_reader
 urb_pop_reader = pd.read_csv('../../data/ind_pop.csv', chunksize=1000)
 

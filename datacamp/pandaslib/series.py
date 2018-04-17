@@ -6,7 +6,7 @@ Created on 10 de abr de 2018
 
 import pandas as pd
 
-df = pd.read_csv('../../datasets/tweets.csv')
+df = pd.read_csv('../../data/tweets.csv')
 
 # Extract the created_at column from df: tweet_time
 tweet_time = df['created_at']
