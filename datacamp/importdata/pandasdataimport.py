@@ -22,3 +22,7 @@ data_array = data.values
 
 # Print the datatype of data_array to the shell
 print(type(data_array))
+
+# If there is junk in data, use na_values
+#data = pd.read_csv(file, sep='\t', comment='#', na_values='Nothing')
+

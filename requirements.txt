@@ -1,3 +1,4 @@
-pandas==0.22.0
-numpy==1.14.2
-matplotlib==2.2.2
+pandas==0.22.0 # for DataFrames
+numpy==1.14.2  # for advanced arrays
+matplotlib==2.2.2  # for graph ploting
+xlrd==1.1.0 # for excel importing
