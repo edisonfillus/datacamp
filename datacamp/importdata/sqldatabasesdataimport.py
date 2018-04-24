@@ -11,7 +11,7 @@ table_names = engine.table_names()
 # Print the table names to the shell
 print(table_names)
 
-# Open engine in context manager
+# Open engine in context manager    
 # Perform query and save results to DataFrame: df
 with engine.connect() as con:
     rs = con.execute("SELECT * FROM Album")
