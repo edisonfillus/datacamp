@@ -4,7 +4,7 @@ import h5py
 import matplotlib.pyplot as plt
 
 # Assign filename: file
-file = '../../data/LIGO_data.hdf5'
+file = './data/LIGO_data.hdf5'
 
 # Load file: data
 data = h5py.File(file, 'r')

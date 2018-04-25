@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Assign filename to variable: file
-file = '../../data/digits.csv'
+file = './data/digits.csv'
 
 # Load file as array: digits
 digits = np.loadtxt(file, delimiter=',')
@@ -25,7 +25,7 @@ plt.show()
 import numpy as np
 
 # Assign the filename: file
-file = '../../data/digits_header.txt'
+file = './data/digits_header.txt'
 
 # Load the data: data
 data = np.loadtxt(file, delimiter='\t', skiprows=1, usecols=[0,2])
@@ -36,7 +36,7 @@ print(data)
 
 
 # Assign filename: file
-file = '../../data/seaslug.txt'
+file = './data/seaslug.txt'
 
 # Import file: data
 data = np.loadtxt(file, delimiter='\t', dtype=str)
@@ -58,7 +58,7 @@ plt.show()
 
 
 # Assign the filename: file
-file = '../../data/titanic.csv'
+file = './data/titanic.csv'
 
 # Import file using np.genfromtxt
 data = np.genfromtxt(file, delimiter=',', names=True, dtype=None)

@@ -2,7 +2,7 @@
 import pandas as pd
 
 # Assign spreadsheet filename: file
-file = '../../data/battledeath.xlsx'
+file = './data/battledeath.xlsx'
 
 # Load spreadsheet: xl
 xl = pd.ExcelFile(file)

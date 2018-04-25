@@ -3,9 +3,8 @@ import matplotlib.pyplot as plt
 # Import sas7bdat package
 from sas7bdat import SAS7BDAT
 
-
 # Save file to a DataFrame: df_sas
-with SAS7BDAT('../../data/sales.sas7bdat') as file:
+with SAS7BDAT('./data/sales.sas7bdat') as file:
     df_sas = file.to_data_frame()
 
 # Print head of DataFrame

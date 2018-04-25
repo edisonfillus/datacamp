@@ -2,7 +2,7 @@
 import pandas as pd
 
 # Assign the filename: file
-file = '../../data/titanic.csv'
+file = './data/titanic.csv'
 
 # Read the file into a DataFrame: df
 df = pd.read_csv(file)
@@ -12,7 +12,7 @@ print(df.head())
 
 
 # Assign the filename: file
-file = '../../data/digits.csv'
+file = './data/digits.csv'
 
 # Read the first 5 rows of the file into a DataFrame: data
 data = pd.read_csv(file,nrows=5,header=None)

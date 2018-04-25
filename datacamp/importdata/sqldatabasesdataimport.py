@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 import pandas as pd
 
 # Create engine: engine
-engine = create_engine('sqlite:///../../data/Chinook.sqlite')
+engine = create_engine('sqlite:///./data/Chinook.sqlite')
 
 # Save the table names to a list: table_names
 table_names = engine.table_names()

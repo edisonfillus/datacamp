@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load Stata file into a pandas DataFrame: df
-df = pd.read_stata('../../data/disarea.dta')
+df = pd.read_stata('./data/disarea.dta')
 
 # Print the head of the DataFrame df
 print(df.head())

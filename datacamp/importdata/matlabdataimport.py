@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load MATLAB file: mat
-mat = scipy.io.loadmat('../../data/albeck_gene_expression.mat')
+mat = scipy.io.loadmat('./data/albeck_gene_expression.mat')
 
 # Print the datatype type of mat
 print(type(mat))
