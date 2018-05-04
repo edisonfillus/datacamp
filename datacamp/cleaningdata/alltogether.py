@@ -76,3 +76,72 @@ assert gapminder_melt.year.dtypes == np.int64
 
 # Test if life_expectancy is of type float64
 assert gapminder_melt.life_expectancy.dtypes == np.float64
+
+
+# Create the series of countries: countries
+countries = gapminder_melt['country']
+
+# Drop all the duplicates from countries
+countries = countries.drop_duplicates()
+
+# Write the regular expression: pattern
+pattern = '^[A-Za-z\.\s]*$'
+
+# Create the Boolean vector: mask
+mask = countries.str.contains(pattern)
+
+# Invert the mask: mask_inverse
+mask_inverse = ~mask
+
+# Subset countries using mask_inverse: invalid_countries
+invalid_countries = countries.loc[mask_inverse]
+
+# Print invalid_countries
+print(invalid_countries)
+
+# Assert that country does not contain any missing values
+assert pd.notnull(gapminder_melt.country).all()
+
+# Assert that year does not contain any missing values
+assert pd.notnull(gapminder_melt.year).all()
+
+# Drop the missing values
+gapminder_melt = gapminder_melt.dropna()
+
+# Print the shape of gapminder
+print(gapminder_melt.shape)
+
+
+# Add first subplot
+plt.subplot(2, 1, 1)
+
+# Create a histogram of life_expectancy
+gapminder_melt['life_expectancy'].plot(kind='hist')
+
+# Group gapminder: gapminder_agg
+gapminder_agg = gapminder_melt.groupby('year')['life_expectancy'].mean()
+
+# Print the head of gapminder_agg
+print(gapminder_agg.head())
+
+# Print the tail of gapminder_agg
+print(gapminder_agg.tail())
+
+# Add second subplot
+plt.subplot(2, 1, 2)
+
+# Create a line plot of life expectancy per year
+gapminder_agg.plot()
+
+# Add title and specify axis labels
+plt.title('Life expectancy over the years')
+plt.ylabel('Life expectancy')
+plt.xlabel('Year')
+
+# Display the plots
+plt.tight_layout()
+plt.show()
+
+# Save both DataFrames to csv files
+#gapminder_melt.to_csv('gapminder_melt.csv')
+#gapminder_agg.to_csv('gapminder_agg.csv')
