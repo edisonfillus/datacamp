@@ -18,11 +18,10 @@ ts1 = pd.DataFrame([
     ['2016-07-14', 13],
     ['2016-07-15', 14],
     ['2016-07-16', 15],
-    ['2016-07-17', 16]],  columns=['Date', 'Value'])
+    ['2016-07-17', 16]], columns=['Date', 'Value'])
 
-ts1.index = pd.to_datetime(ts1['Date'])
-del ts1['Date']
-
+ts1['Date'] = pd.to_datetime(ts1['Date'])
+ts1.set_index('Date', inplace=True)
 
 ts2 = pd.DataFrame([
     ['2016-07-01', 0],
@@ -37,8 +36,8 @@ ts2 = pd.DataFrame([
     ['2016-07-14', 9],
     ['2016-07-15', 10]], columns=['Date', 'Value'])
 
-ts2.index = pd.to_datetime(ts2['Date'])
-del ts2['Date']
+ts2['Date'] = pd.to_datetime(ts2['Date'])
+ts2.set_index('Date', inplace=True)
 
 print(ts2)
 
