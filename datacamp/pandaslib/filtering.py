@@ -18,3 +18,5 @@ stats = daily_departures.describe()
 print(dallas)
 
 print(stats)
+
+
