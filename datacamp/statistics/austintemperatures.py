@@ -98,6 +98,7 @@ print(weekly_mean.corr())
 
 # Plot weekly_mean with subplots=True
 weekly_mean.plot(subplots=True)
+
 plt.show()
 
 
@@ -115,4 +116,26 @@ sunny_fraction = sunny_hours / total_hours
 
 # Make a box plot of sunny_fraction
 sunny_fraction.plot(kind='box')
+plt.show()
+
+# Resample dew_point_faren and dry_bulb_faren by Month, aggregating the maximum values: monthly_max
+monthly_max = df_clean[['dew_point_faren','dry_bulb_faren']].resample('M').max()
+
+# Generate a histogram with bins=8, alpha=0.5, subplots=True
+monthly_max.plot(kind='hist', bins=8, alpha=0.5,subplots=True)
+
+# Show the plot
+plt.show()
+
+
+# Resample the August 2011 temperatures in df_clean by day and aggregate the maximum value: august_2011
+august_2011 = df_clean.loc['2011-Aug','dry_bulb_faren'].resample('D').max()
+
+# Filter out days in august_2011 where the value exceeded august_max: august_2011_high
+august_2011_high = august_2011[august_2011 > 95]
+
+# Construct a CDF of august_2011_high
+august_2011_high.plot(kind='hist', bins=25, normed=True,cumulative=True)
+
+# Display the plot
 plt.show()
