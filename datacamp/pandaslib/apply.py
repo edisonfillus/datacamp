@@ -22,3 +22,21 @@ reg_disp = regional.apply(disparity)  # for each group
 
 # Print the disparity of 'United States', 'United Kingdom', and 'China'
 print(reg_disp.loc[['United States','United Kingdom','China']])
+
+titanic = pd.read_csv('./data/titanic.csv')
+
+
+# Create a groupby object using titanic over the 'sex' column: by_sex
+by_sex = titanic.groupby('Sex')
+
+def c_deck_survival(gr):
+    c_passengers = gr['Cabin'].str.startswith('C').fillna(False)
+    return gr.loc[c_passengers, 'Survived'].mean()
+
+# Call by_sex.apply with the function c_deck_survival and print the result
+c_surv_by_sex = by_sex.apply(c_deck_survival)
+
+# Print the survival rates
+print(c_surv_by_sex)
+
+
