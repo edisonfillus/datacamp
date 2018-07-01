@@ -57,4 +57,5 @@ sales_and_managers = pd.merge(sales, managers, how='inner', left_on=['city','sta
 # Merge all
 merge_default = pd.merge(sales_and_managers, revenue_and_sales, how='inner', on=['city','state'])
 
-
+#pd.merge_ordered(austin,houston, on='date', suffixes=['_aus','_hus'], fill_method='ffill')
+#pd.merge_asof(auto,oil,left_on='yr',right_on='Date')
