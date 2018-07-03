@@ -10,3 +10,4 @@ sqlalchemy==1.2.7 # for databases ORM mapping
 requests==2.18.4 # for HTTP requests
 beautifulsoup4==4.6.0 # for HTML parsing and extract
 tweepy==3.6.0 # for Tweeter api consuming
+psycopg2-binary==2.7.5 # for PostgreSQL connections
