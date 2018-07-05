@@ -43,6 +43,6 @@ stmt = stmt.group_by(managers.columns.name)
 # Execute statement: results
 results = engine.execute(stmt).fetchall()
 
-# print manager
+# Print manager
 for record in results:
     print(record)
