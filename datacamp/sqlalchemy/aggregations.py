@@ -1,8 +1,9 @@
 # Create an engine to the census database
 from sqlalchemy import create_engine, MetaData, Table, select, func
 
-engine = create_engine(
-    'postgresql+psycopg2://student:datacamp@postgresql.csrrinzqubik.us-east-1.rds.amazonaws.com:5432/census')
+#engine = create_engine('postgresql+psycopg2://student:datacamp@postgresql.csrrinzqubik.us-east-1.rds.amazonaws.com:5432/census')
+engine = create_engine('mysql+pymysql://student:datacamp@courses.csrrinzqubik.us-east-1.rds.amazonaws.com:3306/census')
+
 
 metadata = MetaData()
 

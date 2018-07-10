@@ -48,3 +48,38 @@ percent_female = engine.execute(stmt).scalar()
 
 # Print the percentage
 print(percent_female)
+
+
+# Build a query to calculate the percentage of females in 2000: stmt
+stmt = select([census.columns.state,
+    (func.sum(case([
+            (census.columns.sex == 'F', census.columns.pop2000)
+        ], else_=0)) /
+     cast(func.sum(census.columns.pop2000), Numeric()) * 100).label('percent_female')
+])
+
+# Group By state
+stmt = stmt.group_by(census.columns.state)
+
+# Execute the query and store the results: results
+results = engine.execute(stmt).fetchall()
+
+# Print the percentage
+for result in results:
+    print(result.state, result.percent_female)
+
+# Calculate weighted average age: stmt
+stmt = select([census.columns.sex,
+               (func.sum(census.columns.age * census.columns.pop2008) /
+                func.sum(census.columns.pop2008)).label('average_age')
+               ])
+
+# Group by sex
+stmt = stmt.group_by(census.columns.sex)
+
+# Execute the query and store the results: results
+results = engine.execute(stmt).fetchall()
+
+# Print the average age by sex
+for result in results:
+    print(result.sex, result.average_age)
