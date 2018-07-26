@@ -13,3 +13,4 @@ tweepy==3.6.0 # for Tweeter api consuming
 psycopg2-binary==2.7.5 # for PostgreSQL connections
 pymysql==0.9.1 # for MySQL connections
 pillow==5.2.0
+bokeh==0.13.0
