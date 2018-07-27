@@ -10,7 +10,10 @@ aapl['date'] = pd.to_datetime(aapl['date'])
 p = figure(x_axis_type='datetime', x_axis_label='Date', y_axis_label='US Dollars')
 
 # Plot date along the x axis and price along the y axis
-p.line(pd.to_datetime(aapl['date']), aapl['close'].tolist())
+p.line(aapl['date'], aapl['close'])
+
+# With date on the x-axis and price on the y-axis, add a white circle glyph of size 4
+p.circle(aapl['date'], aapl['close'], fill_color='white', size=4)
 
 # Specify the name of the output file and show the result
 output_file('line.html')
