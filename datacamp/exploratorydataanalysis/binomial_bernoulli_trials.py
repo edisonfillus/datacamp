@@ -82,3 +82,19 @@ _ = plt.ylabel('ECDF')
 
 # Show the plot
 plt.show()
+
+# Trick to centralize bins to labels
+
+# Compute bin edges: bins
+bins = np.arange(0, max(n_defaults)+1.5)-0.5
+
+# Generate histogram
+plt.hist(n_defaults,normed=True,bins=bins)
+
+# Label axes
+_ = plt.xlabel('Defaults per 100')
+_ = plt.ylabel('Quantity')
+
+
+# Show the plot
+plt.show()
