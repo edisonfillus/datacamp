@@ -18,3 +18,5 @@ scikit-learn==0.19.2 # For Machine Learning
 Keras==2.2.4 # For Deep Learning
 tensorflow==1.12.0 # For Neural Networks
 tensorflow-gpu==1.12.0 # For Neural Networks, using GPU
+networkx==2.2 # For Network Analysis
+nxviz==0.6.0 # For Network Graphical plotting
